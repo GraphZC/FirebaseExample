@@ -32,7 +32,7 @@ export default {
     },
     async mounted()  {
         await usePetsStore().fetchPets();
-        // this.pets = usePetsStore().getPets;
+        this.pets = usePetsStore().getPets;
         // console.log(usePetsStore().getPets);
     }
     

@@ -14,13 +14,7 @@ export const usePetsStore = defineStore('pets', {
     actions: {
         async fetchPets() {
             const queryData = await getDocs(collection(db, "pets"));
-            queryData.forEach((doc) => {
-                console.log(doc.data());
-            })
-
-            // const queryData = await getDocs(collection(db, "pets"));
-            // this.pets = [1, 2, 3];
-            // this.pets = queryData.docs.map((doc) => doc.data());
+            this.pets = queryData.docs.map((doc) => doc.data());
         }
     },
 });
